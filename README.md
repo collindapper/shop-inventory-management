@@ -39,3 +39,19 @@ Added section "Who We Are", "What We Do", "Our Mission", and "Why Choose Us?" to
 
 - aboutscreen.html, line 28
 
+
+**E - Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.**
+
+
+_Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the sample inventory appropriate for the store, the inventory is stored in a set so duplicate items cannot be added to your products. When duplicate items are added, make a “multi-pack” part._
+
+***
+
+Made sure to add "import com.example.demo.domain.Product" to be able to create a product.
+
+- BootStrapData.java, line 3
+
+Created Outsourced parts and products list within a logical IF statement that checks the count of "partRepository" and "productRepository" to ensure they are both at ZERO so that duplicate items are not created.
+
+- BootStrapData.java, line 52
+

@@ -1,8 +1,7 @@
 package com.example.demo.bootstrap;
 
-import com.example.demo.domain.OutsourcedPart;
-import com.example.demo.domain.Part;
 import com.example.demo.domain.Product;
+import com.example.demo.domain.OutsourcedPart;
 import com.example.demo.repositories.OutsourcedPartRepository;
 import com.example.demo.repositories.PartRepository;
 import com.example.demo.repositories.ProductRepository;
@@ -14,7 +13,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  *
@@ -39,26 +37,69 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-       /*
-        OutsourcedPart o= new OutsourcedPart();
-        o.setCompanyName("Western Governors University");
-        o.setName("out test");
-        o.setInv(5);
-        o.setPrice(20.0);
-        o.setId(100L);
-        outsourcedPartRepository.save(o);
-        OutsourcedPart thePart=null;
-        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
-        for(OutsourcedPart part:outsourcedParts){
-            if(part.getName().equals("out test"))thePart=part;
+        if (partRepository.count() == 0 && productRepository.count() == 0) {
+            // Add CPU part
+            OutsourcedPart processor = new OutsourcedPart();
+            processor.setCompanyName("Intel");
+            processor.setName("CPU");
+            processor.setInv(100);
+            processor.setPrice(300);
+            processor.setId(1001);
+            outsourcedPartRepository.save(processor);
+
+            // Add MOBO part
+            OutsourcedPart motherboard = new OutsourcedPart();
+            motherboard.setCompanyName("MSI");
+            motherboard.setName("Motherboard");
+            motherboard.setInv(100);
+            motherboard.setPrice(200);
+            motherboard.setId(1002);
+            outsourcedPartRepository.save(motherboard);
+
+            // Add RAM part
+            OutsourcedPart memory = new OutsourcedPart();
+            memory.setCompanyName("Corsair");
+            memory.setName("RAM memory");
+            memory.setInv(200);
+            memory.setPrice(60);
+            memory.setId(1003);
+            outsourcedPartRepository.save(memory);
+
+            // Add SSD part
+            OutsourcedPart storage = new OutsourcedPart();
+            storage.setCompanyName("Western Digital");
+            storage.setName("Solid State Drive");
+            storage.setInv(100);
+            storage.setPrice(125);
+            storage.setId(1004);
+            outsourcedPartRepository.save(storage);
+
+            // Add PSU part
+            OutsourcedPart power = new OutsourcedPart();
+            power.setCompanyName("Corsair");
+            power.setName("Power Supply");
+            power.setInv(100);
+            power.setPrice(150);
+            power.setId(1005);
+            outsourcedPartRepository.save(power);
+
+            List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
+            for(OutsourcedPart part:outsourcedParts){
+                System.out.println(part.getName()+" "+part.getCompanyName());
+            }
+
+            // Add Desktop Computer product
+            Product desktopComp = new Product("Desktop Computer",900.0,20);
+            productRepository.save(desktopComp);
+            Product gamingComp = new Product("Gaming Computer",1250.0,20);
+            productRepository.save(gamingComp);
+
+
         }
 
-        System.out.println(thePart.getCompanyName());
-        */
-        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
-        for(OutsourcedPart part:outsourcedParts){
-            System.out.println(part.getName()+" "+part.getCompanyName());
-        }
+
+
+
 
         /*
         Product bicycle= new Product("bicycle",100.0,15);
