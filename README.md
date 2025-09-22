@@ -55,3 +55,14 @@ Created Outsourced parts and products list within a logical IF statement that ch
 
 - BootStrapData.java, line 52
 
+**F - Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:**
+
+- _The “Buy Now” button must be next to the buttons that update and delete products._
+- _The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts._
+- _Display a message that indicates the success or failure of a purchase._
+
+***
+
+Added empty 'Buy Now' button on to the main screen. Will work on the onCLick logic soon.
+
+- mainscreen.html, line 91
