@@ -37,6 +37,9 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        // partRepository.deleteAll();
+        // productRepository.deleteAll();
+
         if (partRepository.count() == 0 && productRepository.count() == 0) {
             // Add CPU part
             OutsourcedPart processor = new OutsourcedPart();
@@ -93,20 +96,15 @@ public class BootStrapData implements CommandLineRunner {
             productRepository.save(desktopComp);
             Product gamingComp = new Product("Gaming Computer",1250.0,20);
             productRepository.save(gamingComp);
+            Product genLaptop = new Product("Generic Laptop", 700, 20);
+            productRepository.save(genLaptop);
+            Product gamingLaptop = new Product("Gaming Laptop", 1100.0,20);
+            productRepository.save(gamingLaptop);
+            Product linuxComp = new Product("Linux Computer",900.0,20);
+            productRepository.save(linuxComp);
 
 
         }
-
-
-
-
-
-        /*
-        Product bicycle= new Product("bicycle",100.0,15);
-        Product unicycle= new Product("unicycle",100.0,15);
-        productRepository.save(bicycle);
-        productRepository.save(unicycle);
-        */
 
         System.out.println("Started in Bootstrap");
         System.out.println("Number of Products"+productRepository.count());
