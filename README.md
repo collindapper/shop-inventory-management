@@ -66,3 +66,5 @@ Created Outsourced parts and products list within a logical IF statement that ch
 Added empty 'Buy Now' button on to the main screen. Will work on the onCLick logic soon.
 
 - mainscreen.html, line 91
+
+Working on **NEW** files: "BuyProductController.java" and "confirmationbuyproduct.html"
