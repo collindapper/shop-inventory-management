@@ -67,4 +67,12 @@ Added empty 'Buy Now' button on to the main screen. Will work on the onCLick log
 
 - mainscreen.html, line 91
 
-Working on **NEW** files: "BuyProductController.java" and "confirmationbuyproduct.html"
+With the "buyproduct" href I added to the Buy Now button, I created a new GetMapping object on the existing "AddProductController" to handle decrementing the inventory count of the product being purchased.
+
+- AddProductController, lines 177 - 197
+
+Added "if-else" logic to the "AddProductController" to check if the inventory had 1 product or more. If the product has 1 or more items in inventory, the  product inventory will decerement by 1, and will call the "confirmationbuyproduct.html" file I created. If the else clause is triggered, then the object will call the "errorbuyproduct.html" file.
+
+- AddProductController, lines 182 - 191
+- confirmationbuyproduct.html, lines 1 - 21
+- errorbuyproduct.html, lines 1 - 21
