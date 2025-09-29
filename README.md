@@ -76,3 +76,55 @@ Added "if-else" logic to the "AddProductController" to check if the inventory ha
 - AddProductController, lines 182 - 191
 - confirmationbuyproduct.html, lines 1 - 21
 - errorbuyproduct.html, lines 1 - 21
+
+**G - Modify the parts to track maximum and minimum inventory by doing the following:**
+
+- _Add additional fields to the part entity for maximum and minimum inventory._
+- _Modify the sample inventory to include the maximum and minimum fields._
+- _Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values._
+- _Rename the file the persistent storage is saved to._
+- _Modify the code to enforce that the inventory is between or at the minimum and maximum value._
+
+***
+
+Added "MinInv" and "MaxInv" integers to the "Part.java" domain file.
+
+- Part.java, Lines 30 - 33
+
+Added minInv and maxInv to the Part objects.
+
+- Part.java, Lines 43 - 58
+
+Added get/set functions for handling Min and Max Inventory values.
+
+- Part.java, Lines 92 - 106
+
+Added get/set functions within the sample inventory for parts in BootStrapData file.
+
+- BootStrapData.java, Lines 51 - 96
+
+Updated H2 database name to "dapperware-inventory"
+
+- application.properties, Line 6
+
+Added text input fields for the Min Inventory and Max Inventory on the inhouse part form.
+
+- InhousePartForm.html, Lines 24 - 28
+
+Added text input fields for the Min Inventory and Max Inventory on the outsourced part form.
+
+- OutsourcedPartForm.html, Lines 25 - 29
+
+Added Minimum Inventory and Maximum Inventory entities on the mainscreen table. 
+
+- Mainscreen.html, Lines 44 - 45, 54 - 55
+
+Added check within "AddInhousePartController" to ensure the user input "inv" is between user input "minInv" and "maxInv"
+
+- AddInhousePartController, Lines 46 - 52
+
+Added check within "AddOutsourcedPartController" to ensure the user input "inv" is between user input "minInv" and "maxInv"
+
+- AddOutsourcedPartController, Lines 46 - 52
+
+

@@ -40,17 +40,26 @@ public class AddOutsourcedPartController {
     @PostMapping("/showFormAddOutPart")
     public String submitForm(@Valid @ModelAttribute("outsourcedpart") OutsourcedPart part, BindingResult bindingResult, Model theModel){
         theModel.addAttribute("outsourcedpart",part);
-        if(bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()) {
             return "OutsourcedPartForm";
         }
-        else{
-        OutsourcedPartService repo=context.getBean(OutsourcedPartServiceImpl.class);
-        OutsourcedPart op=repo.findById((int)part.getId());
-        if(op!=null)part.setProducts(op.getProducts());
-            repo.save(part);
-        return "confirmationaddpart";}
+
+        if (part.getInv() < part.getMinInv() || part.getInv() > part.getMaxInv()) {
+            bindingResult.rejectValue(
+                    "inv",
+                    "error.outsourcedpart",
+                    "Inventory must be between " + part.getMinInv() + " and " + part.getMaxInv()
+            );
+            return "OutsourcedPartForm";
+        }
+
+        OutsourcedPartService repo = context.getBean(OutsourcedPartServiceImpl.class);
+        OutsourcedPart op = repo.findById((int)part.getId());
+        if (op != null) {
+            part.setProducts(op.getProducts());
+        }
+        repo.save(part);
+
+        return "confirmationaddpart";
     }
-
-
-
 }

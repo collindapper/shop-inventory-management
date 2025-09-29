@@ -37,8 +37,8 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        // partRepository.deleteAll();
-        // productRepository.deleteAll();
+        //partRepository.deleteAll();
+        //productRepository.deleteAll();
 
         if (partRepository.count() == 0 && productRepository.count() == 0) {
             // Add CPU part
@@ -48,6 +48,8 @@ public class BootStrapData implements CommandLineRunner {
             processor.setInv(100);
             processor.setPrice(300);
             processor.setId(1001);
+            processor.setMinInv(0);
+            processor.setMaxInv(1000);
             outsourcedPartRepository.save(processor);
 
             // Add MOBO part
@@ -57,6 +59,8 @@ public class BootStrapData implements CommandLineRunner {
             motherboard.setInv(100);
             motherboard.setPrice(200);
             motherboard.setId(1002);
+            motherboard.setMinInv(0);
+            motherboard.setMaxInv(1000);
             outsourcedPartRepository.save(motherboard);
 
             // Add RAM part
@@ -66,6 +70,8 @@ public class BootStrapData implements CommandLineRunner {
             memory.setInv(200);
             memory.setPrice(60);
             memory.setId(1003);
+            memory.setMinInv(0);
+            memory.setMaxInv(1000);
             outsourcedPartRepository.save(memory);
 
             // Add SSD part
@@ -75,6 +81,8 @@ public class BootStrapData implements CommandLineRunner {
             storage.setInv(100);
             storage.setPrice(125);
             storage.setId(1004);
+            storage.setMinInv(0);
+            storage.setMaxInv(1000);
             outsourcedPartRepository.save(storage);
 
             // Add PSU part
@@ -84,6 +92,8 @@ public class BootStrapData implements CommandLineRunner {
             power.setInv(100);
             power.setPrice(150);
             power.setId(1005);
+            power.setMinInv(0);
+            power.setMaxInv(1000);
             outsourcedPartRepository.save(power);
 
             List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
