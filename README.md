@@ -121,11 +121,11 @@ Added Minimum Inventory and Maximum Inventory entities on the mainscreen table.
 
 Added check within "AddInhousePartController" to ensure the user input "inv" is between user input "minInv" and "maxInv"
 
-- AddInhousePartController, Lines 46 - 52
+- AddInhousePartController.java, Lines 46 - 52
 
 Added check within "AddOutsourcedPartController" to ensure the user input "inv" is between user input "minInv" and "maxInv"
 
-- AddOutsourcedPartController, Lines 46 - 52
+- AddOutsourcedPartController.java, Lines 46 - 52
 
 **H - Add validation for between or at the maximum and minimum fields. The validation must include the following:**
 
@@ -137,9 +137,12 @@ Added check within "AddOutsourcedPartController" to ensure the user input "inv" 
 
 Added check within "AddInhousePartController" to ensure the user input "inv" is between user input "minInv" and "maxInv" when updating.
 
-- AddInhousePartController, Lines 46 - 52
+- AddInhousePartController.java, Lines 46 - 52
 
 Added check within "AddOutsourcedPartController" to ensure the user input "inv" is between user input "minInv" and "maxInv" when updating.
 
-- AddOutsourcedPartController, Lines 46 - 52
+- AddOutsourcedPartController.java, Lines 46 - 52
 
+Updated "EnufPartsValidator.java" to return false if the part inventory minus the products associated part inventory is less than the min or greater than the maximum inventory set.
+
+- EnufPartsValidator.java, line 36
