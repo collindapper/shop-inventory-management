@@ -146,3 +146,13 @@ Added check within "AddOutsourcedPartController" to ensure the user input "inv" 
 Updated "EnufPartsValidator.java" to return false if the part inventory minus the products associated part inventory is less than the min or greater than the maximum inventory set.
 
 - EnufPartsValidator.java, line 36
+
+**I - Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.**
+
+***
+
+Added tests for get/set minimum and maximum inventory on the PartTest class in the test package.
+
+- PartTest.java, Lines 104 - 138
+
+
