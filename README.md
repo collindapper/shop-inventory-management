@@ -127,4 +127,19 @@ Added check within "AddOutsourcedPartController" to ensure the user input "inv" 
 
 - AddOutsourcedPartController, Lines 46 - 52
 
+**H - Add validation for between or at the maximum and minimum fields. The validation must include the following:**
+
+- _Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts._
+- _Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum._
+- _Display error messages when adding and updating parts if the inventory is greater than the maximum._
+
+***
+
+Added check within "AddInhousePartController" to ensure the user input "inv" is between user input "minInv" and "maxInv" when updating.
+
+- AddInhousePartController, Lines 46 - 52
+
+Added check within "AddOutsourcedPartController" to ensure the user input "inv" is between user input "minInv" and "maxInv" when updating.
+
+- AddOutsourcedPartController, Lines 46 - 52
 
