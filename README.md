@@ -155,4 +155,12 @@ Added tests for get/set minimum and maximum inventory on the PartTest class in t
 
 - PartTest.java, Lines 104 - 138
 
+**J - Remove the class files for any unused validators in order to clean your code.**
+
+***
+
+Deleted unused Validators.
+
+- DeletePartValidator.java
+
 
